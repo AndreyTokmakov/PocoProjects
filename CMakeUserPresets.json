@@ -1,0 +1,9 @@
+{
+    "version": 4,
+    "vendor": {
+        "conan": {}
+    },
+    "include": [
+        "/home/andtokm/Projects/PocoProjects/build/Release/generators/CMakePresets.json"
+    ]
+}
