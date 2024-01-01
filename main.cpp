@@ -1,11 +1,11 @@
-//============================================================================
-// Name        : PocoProjects.cpp
-// Created on  : 15.09.2021
-// Author      : Tokmakov Andrey
-// Version     : 1.0
-// Copyright   : Your copyright notice
-// Description : PocoProjects C++
-//============================================================================
+/**============================================================================
+Name        : main.cpp
+Created on  : 15.09.2021
+Author      : Andrei Tokmakov
+Version     : 1.0
+Copyright   : Your copyright notice
+Description : PocoProjects C++
+============================================================================**/
 
 #include <string_view>
 #include <vector>
@@ -17,16 +17,11 @@
 #include "Environment/Environment.h"
 #include "Random/Random.h"
 #include "Cryptography/Cryptography.h"
+#include "MultiThreading/MultiThreading.h"
 
 #include "Poco/JSONString.h"
 
 
-
-namespace Experiments
-{
-
-
-}
 
 int main([[maybe_unused]] int argc,
          [[maybe_unused]] char** argv)
@@ -37,9 +32,10 @@ int main([[maybe_unused]] int argc,
     // Events::TestAll();
     // Processes::TestAll();
     // Networking::TestAll();
-    Environment::TestAll();
+    // Environment::TestAll();
     // Random::TestAll();
     // Cryptography::TestAll();
+    MultiThreading::TestAll();
 
 
     return EXIT_SUCCESS;
