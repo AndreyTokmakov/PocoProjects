@@ -17,6 +17,7 @@ Description : MultiThreading.cpp
 #include "Poco/TaskManager.h"
 #include "Poco/TaskNotification.h"
 #include "Poco/Observer.h"
+#include "Poco/Activity.h"
 
 using Poco::Timer;
 using Poco::TimerCallback;
@@ -122,10 +123,55 @@ namespace Task_Observer
     }
 }
 
+namespace Activities
+{
+    using Poco::Thread;
+
+    class ActivityExample
+    {
+    public:
+        ActivityExample(): activity {this, &ActivityExample::runActivity} {
+        }
+
+        void start()
+        {
+            activity.start();
+        }
+        void stop()
+        {
+            activity.stop(); // request stop
+            activity.wait(); // wait until activity actually stops
+        }
+
+    protected:
+
+        void runActivity()
+        {
+            while (!activity.isStopped())
+            {
+                std::cout << "Activity running." << std::endl;
+                Thread::sleep(200);
+            }
+        }
+    private:
+        Poco::Activity<ActivityExample> activity;
+    };
+
+
+    void Test()
+    {
+        ActivityExample example;
+        example.start();
+        Thread::sleep(2000);
+        example.stop();
+    }
+}
+
 
 void MultiThreading::TestAll()
 {
     // CounterThreadTest::Test();
     // TimerExample::Test();
-    Task_Observer::Test();
+    // Task_Observer::Test();
+    Activities::Test();
 }
