@@ -8,6 +8,7 @@
 //============================================================================
 
 #include "Networking.h"
+#include "WebSockets.h"
 
 #include "Poco/Net/DNS.h"
 #include "Poco/Net/SocketAddress.h"
@@ -101,12 +102,14 @@ namespace Networking::Server
 
 void Networking::TestAll()
 {
+    WebSockets::TestAll();
+
     // ResolveDnsName();
     // Test();
 
     // APITests::SendRequest();
     // APITests::SendRequestPost();
 
-    Server::runServer();
+    // Server::runServer();
 }
 

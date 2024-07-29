@@ -23,6 +23,7 @@ add_executable(PocoProjects
         Foundation/Events.cpp Foundation/Events.h
         Processes/Processes.cpp Processes/Processes.h
         Networking/Networking.cpp Networking/Networking.h
+        Networking/WebSockets.cpp Networking/WebSockets.h
         Environment/Environment.cpp Environment/Environment.h
         DataTime/Timer.h DataTime/Timer.cpp
         Random/Random.h Random/Random.cpp
